@@ -38,3 +38,5 @@ Stage 6 - Final Setup:
 
 Select the original non-animated object and the rig.
 Complete the process.
+
+https://extensions.blender.org/add-ons/mesh2rig/
