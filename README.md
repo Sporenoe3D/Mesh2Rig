@@ -1,42 +1,40 @@
 # Mesh2Rig
 Blender add-on for converting mesh to rig
 
-Will help transfer cloth simulation or something like that to rig. This is a test extension that should help transfer the animation of the grid to the rig. I made it in 6 hours without any programming knowledge using Ai, so do not judge strictly.
+Will help transfer and bake cloth simulation or something like that to rig. This can be useful when transferring animation into a game engine or other software.
+
+I highly recommend watching the official video tutorial: https://youtu.be/k9EHTYyUhok
 
 Setup:
 
-Prepare an object with mesh animation (e.g., cloth simulation) and a duplicate of it, matching its shape on the first frame but without animation.
+Prepare an object with mesh animation (e.g., cloth simulation).
 
-Stage 1 - Rig Creation:
+Step 1: Automatic Rig generation
 
-Select the non-animated object.
-Generate a rig on it.
-(Optional) In Edit Mode, remove excess bones or add new ones as needed.
-(I use a bone length of 0.003 m)
+Set the maximum number of bones.
+Set the minimum distance multiplier between bones.
+Set the bone scale controller (adjust if model surfaces are close).
 
-Stage 2 - Rig Binding:
+Step 1.5: Merge Bones
 
-Select the created rig and the non-animated object.
-Perform the second stage.
+Allows you to merge selected bones in Edit mode if needed. 
+Set Factor: Distance multiplier for searching nearby bones.
+Set Min count: Lower limit for merging bones.
 
-Stage 3 - Rig Finalization:
+Steps 2: Making scales for rig
 
-Select the rig.
-Execute the third stage.
+Steps 3: Automatic Setup
 
-Stage 4 - Target Assignment:
+Use the "Add rotation constraints" checkbox for custom rigs or for low bone counts on high-poly models. Recommended to leave off for automated rigs with lots of bones. 
 
-Set the non-animated object as the source.
-Set the animated object (e.g., with cloth simulation) as the target.
+Step 4: Animation Baking
 
-Stage 5 - Animation Transfer:
+Set animation Start frame.
+Set animation End frame.
+Bake the animation.
 
-Define the first and last frames of the animation
-Apply the fifth stage.
+Step 5: Finalize
 
-Stage 6 - Final Setup:
-
-Select the original non-animated object and the rig.
-Complete the process.
+Note: Don't forget to remove your initial animation (cloth simulation, deformation modifiers, etc.)
 
 https://extensions.blender.org/add-ons/mesh2rig/
